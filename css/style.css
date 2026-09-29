@@ -65,17 +65,13 @@ footer {
   Убираем стандартные отступы и маркеры списка навигации.
 */
 .site-nav__list {
+  display: flex;
+  gap: 24px;          /* расстояние между пунктами */
   padding: 0;
   margin: 16px 0 0;
   list-style: none;
 }
 
-/*
-  Добавляем расстояние между пунктами меню.
-*/
-.site-nav__list li {
-  margin-bottom: 8px;
-}
 
 /*
   Оформляем ссылки меню.
@@ -378,6 +374,7 @@ a:hover {
 a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 
