@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  
    <meta property="og:type" content="website">
     <meta property="og:title" content="Учебный интернет-магазин">
     <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
@@ -12,6 +13,7 @@
     <title>Каталог товаров — Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header>
     <div class="site-header">
@@ -49,31 +51,50 @@
       <h2>Список товаров</h2>
 
       <article class="product-card">
-        <h3>Товар 1</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 1000 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
-      </article>
+  <span class="product-card__badge">Хит</span>
+  <h3 class="product-card__title">Товар 1</h3>
+  <p class="product-card__description">Краткое описание.</p>
+  <p class="product-card__price">1000 руб.</p>
+  <button class="button product-card__button" type="button" data-product="Товар 1">
+    Заказать
+  </button>
+</article>
 
       <article class="product-card">
-        <h3>Товар 2</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 1500 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
-      </article>
+  <span class="product-card__badge">Хит</span>
+  <h3 class="product-card__title">Товар 2</h3>
+  <p class="product-card__description">Краткое описание.</p>
+  <p class="product-card__price">2000 руб.</p>
+  <button class="button product-card__button" type="button" data-product="Товар 1">
+    Заказать
+  </button>
+</article>
 
       <article class="product-card">
-        <h3>Товар 3</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 2000 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
-      </article>
-    </section>
-  </main>
+  <span class="product-card__badge">Хит</span>
+  <h3 class="product-card__title">Товар 3</h3>
+  <p class="product-card__description">Краткое описание.</p>
+  <p class="product-card__price">1500 руб.</p>
+  <button class="button product-card__button" type="button" data-product="Товар 1">
+    Заказать
+  </button>
+</article>
 
   <footer>
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+  <button class="back-to-top" type="button" id="back-to-top" aria-label="Наверх">
+  ↑
+</button>
+<section class="section" id="popular">
+  <h2>Популярные товары</h2>
+  <div class="catalog-grid">
+    <article class="product-card">...</article>
+    <article class="product-card">...</article>
+    <article class="product-card">...</article>
+  </div>
+</section>
+
 </body>
 </html>
