@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+feature/multi-page-navigation
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Каталог товаров учебного интернет-магазина: наушники, клавиатуры, мыши и аксессуары.">
+    <title>Каталог товаров - Учебный интернет-магазин</title>
+
    <meta property="og:type" content="website">
     <meta property="og:title" content="Учебный интернет-магазин">
     <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
@@ -10,70 +16,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Каталог товаров учебного интернет-магазина.">
     <title>Каталог товаров — Учебный интернет-магазин</title>
+ main
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
-
-      <nav class="site-nav" aria-label="Основная навигация">
-        <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
-        </ul>
-      </nav>
+<body id="top">
+<header class="site-header">
+    <div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">ShopProject</a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <main>
+<main class="page">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Каталог</span>
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+        <span class="breadcrumbs__current">Каталог</span>
     </nav>
 
-    <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
-      </p>
+    <section class="catalog">
+        <h1 class="catalog__title">Каталог товаров</h1>
+        <p class="catalog__text">
+            Учебный каталог компьютерной периферии. Фильтры, сортировка и отдельные
+            страницы товаров появятся на следующих занятиях.
+        </p>
     </section>
 
-    <section class="section">
-      <h2>Список товаров</h2>
+    <section class="catalog-layout" id="goods">
+        <aside class="catalog-filters">
+            <h2 class="catalog-filters__title">Фильтры</h2>
+            <form class="catalog-filters__form" action="#" method="get">
+                <fieldset class="catalog-filters__group">
+                    <legend class="catalog-filters__legend">Категория</legend>
+                    <label class="catalog-filters__option">
+                        <input class="catalog-filters__checkbox" type="checkbox" name="category" value="all">
+                        Все товары
+                    </label>
+                    <label class="catalog-filters__option">
+                        <input class="catalog-filters__checkbox" type="checkbox" name="category" value="popular">
+                        Популярные
+                    </label>
+                    <label class="catalog-filters__option">
+                        <input class="catalog-filters__checkbox" type="checkbox" name="category" value="new">
+                        Новинки
+                    </label>
+                </fieldset>
 
-      <article class="product-card">
-        <h3>Товар 1</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 1000 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
-      </article>
+                <fieldset class="catalog-filters__group">
+                    <legend class="catalog-filters__legend">Цена, руб.</legend>
+                    <label class="catalog-filters__label" for="price-from">От</label>
+                    <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+                    <label class="catalog-filters__label" for="price-to">До</label>
+                    <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="8000">
+                </fieldset>
 
-      <article class="product-card">
-        <h3>Товар 2</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 1500 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
-      </article>
+                <button class="button button--primary" type="submit">Применить</button>
+            </form>
+        </aside>
 
-      <article class="product-card">
-        <h3>Товар 3</h3>
-        <p>Краткое описание учебного товара.</p>
-        <p>Цена: 2000 руб.</p>
-        <a class="button" href="index.html#popular">Подробнее</a>
-      </article>
+        <section class="catalog-products">
+            <h2 class="catalog-products__title">Список товаров</h2>
+            <div class="products-grid">
+
+                <article class="product-card product-card--featured">
+                    <span class="product-card__badge">Хит</span>
+                    <h3 class="product-card__title">Наушники</h3>
+                    <p class="product-card__description">Беспроводные, с шумоподавлением, до 30 часов работы.</p>
+                    <p class="product-card__price">Цена: 7900 руб.</p>
+                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Клавиатура</h3>
+                    <p class="product-card__description">Механическая, формат 75%, подсветка.</p>
+                    <p class="product-card__price">Цена: 6500 руб.</p>
+                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Мышь</h3>
+                    <p class="product-card__description">Беспроводная, вес 63 грамма, для работы и игр.</p>
+                    <p class="product-card__price">Цена: 4200 руб.</p>
+                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                </article>
+
+                <article class="product-card product-card--discount">
+                    <span class="product-card__badge product-card__badge--discount">Скидка</span>
+                    <h3 class="product-card__title">Коврик для мыши</h3>
+                    <p class="product-card__description">Тканевый, размер 900 на 400 мм, прошитый край.</p>
+                    <p class="product-card__price">Цена: 1200 руб.</p>
+                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">Веб-камера</h3>
+                    <p class="product-card__description">Разрешение 1080p, автофокус, встроенный микрофон.</p>
+                    <p class="product-card__price">Цена: 5300 руб.</p>
+                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                </article>
+
+                <article class="product-card">
+                    <h3 class="product-card__title">USB-хаб</h3>
+                    <p class="product-card__description">Четыре порта USB 3.0, алюминиевый корпус.</p>
+                    <p class="product-card__price">Цена: 1900 руб.</p>
+                    <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+                </article>
+            </div>
+        </section>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-  </footer>
+    <aside class="about">
+        <h2 class="about__title">Как оформить заказ</h2>
+        <p class="about__text">
+            Выберите товар на главной странице и нажмите «Заказать»: откроется форма
+            заявки. Менеджер свяжется с вами в рабочее время.
+        </p>
+    </aside>
+</main>
+
+<footer class="site-footer" id="contacts">
+    <h2 class="site-footer__title">Контакты</h2>
+    <ul class="contacts">
+        <li class="contacts__item">Телефон: <a class="contacts__link" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+        <li class="contacts__item">E-mail: <a class="contacts__link" href="mailto:info@shopproject.ru">info@shopproject.ru</a></li>
+        <li class="contacts__item">Адрес: Москва, проспект Вернадского, 78</li>
+        <li class="contacts__item">Время работы: ежедневно с 10:00 до 20:00</li>
+    </ul>
+    <p class="site-footer__text">&copy; 2026 Учебный проект</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+</footer>
+
+<a class="scroll-top" href="#top" title="Наверх">Наверх</a>
 </body>
 </html>
