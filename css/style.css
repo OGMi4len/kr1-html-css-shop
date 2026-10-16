@@ -144,6 +144,7 @@ button:focus-visible {
 }
 
 .site-nav__list {
+feature/multi-page-navigation
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -159,6 +160,15 @@ button:focus-visible {
     border-radius: var(--radius-sm);
     text-decoration: none;
 }
+
+  display: flex;
+  gap: 24px;          /* расстояние между пунктами */
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+ main
 
 .site-nav__link:hover {
     color: var(--color-white);
@@ -421,6 +431,10 @@ button:focus-visible {
     padding: var(--space-md);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 .catalog-filters__legend {
