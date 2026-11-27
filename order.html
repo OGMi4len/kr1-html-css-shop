@@ -6,6 +6,7 @@
     <meta name="description" content="Форма оформления заявки учебного интернет-магазина.">
     <title>Оформление заявки - Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <script src="js/main.js" defer></script>
 </head>
 <body id="top">
@@ -17,7 +18,7 @@
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
-                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html">Заявка</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="order.html">Заявка</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
@@ -35,12 +36,8 @@
     <section class="order">
         <h1 class="order__title">Оформление заявки</h1>
         <p class="order__text">
-            Заполните форму, и менеджер перезвонит в рабочее время, чтобы подтвердить заказ.
+            Заполните форму, чтобы проверить учебную заявку.
             Поля со звёздочкой обязательны.
-        </p>
-
-        <p class="success-message" id="success-message" hidden>
-            Форма успешно отправлена!
         </p>
 
         <form class="order-form" id="order-form" action="#" method="post" novalidate>
@@ -127,6 +124,7 @@
                 <button class="button button--primary" type="submit">Отправить заявку</button>
             </div>
         </form>
+        <p class="success-message" id="success-message" role="status" hidden>Учебная заявка проверена. Данные остались в браузере.</p>
     </section>
 
     <aside class="about">
@@ -150,6 +148,6 @@
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
 </footer>
 
-<a class="scroll-top" href="#top" title="Наверх">Наверх</a>
+<a href="#top" class="scroll-to-top" aria-label="Наверх">↑</a>
 </body>
 </html>
