@@ -6,6 +6,9 @@
     <meta name="description" content="Карточка товара: беспроводные наушники ShopProject H1, характеристики, цена и заявка.">
     <title>Наушники ShopProject H1 - Учебный интернет-магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/product-data.js" defer></script>
+    <script src="js/product-demo.js" defer></script>
 </head>
 <body id="top">
 <header class="site-header">
@@ -15,7 +18,7 @@
             <ul class="site-nav__list">
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="product.html">Товар</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" aria-current="page" href="product.html">Товар</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
@@ -33,11 +36,16 @@
     </nav>
 
     <section class="product">
-        <h1 class="product__title">Беспроводные наушники ShopProject H1</h1>
+        <!-- Бейдж "Хит продаж" -->
+        <div class="product__header">
+            <h1 class="product__title">Беспроводные наушники ShopProject H1</h1>
+            <span class="product__badge">Хит продаж</span>
+        </div>
 
         <div class="product__layout">
-            <img class="product__image" src="images/headphones.svg" width="480" height="360"
-                 alt="Накладные беспроводные наушники, вид сбоку">
+            <img class="product__image" src="images/images-10.jpeg" width="447" height="447"
+                 srcset="images/images-10-240.jpeg 240w, images/images-10.jpeg 447w"
+                 sizes="(min-width: 768px) 420px, 92vw" alt="Светлые накладные наушники с мягким оголовьем">
 
             <div class="product__info">
                 <p class="product__description">
@@ -54,6 +62,8 @@
 
     <section class="product-specs" id="specs">
         <h2 class="product-specs__title">Характеристики</h2>
+        <p class="table-hint" id="table-hint">На узком экране таблицу можно прокрутить вбок.</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Таблица характеристик" aria-describedby="table-hint">
         <table class="product-table">
             <caption class="product-table__caption">Характеристики модели ShopProject H1</caption>
             <thead>
@@ -63,32 +73,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">Тип</th>
-                    <td>Накладные, закрытые</td>
-                </tr>
-                <tr>
-                    <th scope="row">Подключение</th>
-                    <td>Bluetooth 5.3, кабель 3.5 мм</td>
-                </tr>
-                <tr>
-                    <th scope="row">Шумоподавление</th>
-                    <td>Активное, два режима</td>
-                </tr>
-                <tr>
-                    <th scope="row">Время работы</th>
-                    <td>До 30 часов</td>
-                </tr>
-                <tr>
-                    <th scope="row">Вес</th>
-                    <td>265 грамм</td>
-                </tr>
-                <tr>
-                    <th scope="row">Гарантия</th>
-                    <td>12 месяцев</td>
-                </tr>
+                <tr><th scope="row">Тип</th><td>Накладные, закрытые</td></tr>
+                <tr><th scope="row">Подключение</th><td>Bluetooth 5.3, кабель 3.5 мм</td></tr>
+                <tr><th scope="row">Шумоподавление</th><td>Активное, два режима</td></tr>
+                <tr><th scope="row">Время работы</th><td>До 30 часов</td></tr>
+                <tr><th scope="row">Вес</th><td>265 грамм</td></tr>
+                <tr><th scope="row">Гарантия</th><td>12 месяцев</td></tr>
             </tbody>
         </table>
+        </div>
     </section>
 
     <aside class="about">
@@ -98,6 +91,122 @@
             можно в течение 14 дней, если сохранён комплект поставки.
         </p>
     </aside>
+
+    <!-- Блок Отзывов (с формой) -->
+    <section class="reviews section">
+        <h2 class="section__title">Отзывы покупателей</h2>
+        <div class="reviews__grid">
+            <article class="review-card">
+                <div class="review-card__header">
+                    <div class="review-card__avatar">А</div>
+                    <div class="review-card__meta">
+                        <span class="review-card__author">Алексей М.</span>
+                        <span class="review-card__date">12 октября 2026</span>
+                    </div>
+                </div>
+                <div class="review-card__rating">★★★★★</div>
+                <p class="review-card__text">Отличные наушники! Шумоподавление работает на уровне дорогих брендов. Держат заряд действительно долго, за неделю использования заряжал всего один раз.</p>
+            </article>
+
+            <article class="review-card">
+                <div class="review-card__header">
+                    <div class="review-card__avatar">М</div>
+                    <div class="review-card__meta">
+                        <span class="review-card__author">Мария К.</span>
+                        <span class="review-card__date">5 октября 2026</span>
+                    </div>
+                </div>
+                <div class="review-card__rating">★★★★☆</div>
+                <p class="review-card__text">Очень удобные и легкие. Единственный минус — в комплекте нет переходника для самолета, но для повседневного использования идеально.</p>
+            </article>
+
+            <article class="review-card">
+                <div class="review-card__header">
+                    <div class="review-card__avatar">Д</div>
+                    <div class="review-card__meta">
+                        <span class="review-card__author">Дмитрий С.</span>
+                        <span class="review-card__date">28 сентября 2026</span>
+                    </div>
+                </div>
+                <div class="review-card__rating">★★★★★</div>
+                <p class="review-card__text">Брал для работы в офисе. Микрофон отлично передает голос, коллеги на созвонах не жалуются. Складная конструкция — супер.</p>
+            </article>
+        </div>
+
+        <!-- Форма для добавления отзыва -->
+        <div class="review-form-wrapper">
+            <h3 class="review-form__title">Оставить свой отзыв</h3>
+            <form class="review-form" action="#" method="post">
+                <div class="review-form__field">
+                    <label class="review-form__label" for="review-name">Ваше имя</label>
+                    <input class="review-form__input" type="text" id="review-name" name="name" placeholder="Например, Иван" required>
+                </div>
+
+                <div class="review-form__field">
+                    <label class="review-form__label" for="review-rating">Оценка</label>
+                    <select class="review-form__select" id="review-rating" name="rating" required>
+                        <option value="5">Отлично (5 звезд)</option>
+                        <option value="4">Хорошо (4 звезды)</option>
+                        <option value="3">Нормально (3 звезды)</option>
+                        <option value="2">Плохо (2 звезды)</option>
+                        <option value="1">Ужасно (1 звезда)</option>
+                    </select>
+                </div>
+
+                <div class="review-form__field">
+                    <label class="review-form__label" for="review-text">Текст отзыва</label>
+                    <textarea class="review-form__textarea" id="review-text" name="text" rows="4" placeholder="Поделитесь своими впечатлениями о товаре..." required></textarea>
+                </div>
+
+                <button class="button button--primary review-form__submit" type="submit">Отправить отзыв</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Блок FAQ -->
+        <!-- МЕГА-РАСШИРЕННЫЙ Блок FAQ -->
+    <section class="faq-section section">
+        <h2 class="section__title">Часто задаваемые вопросы</h2>
+        <div class="faq-list">
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Есть ли шумоподавление в микрофоне во время звонков и как оно работает?</summary>
+                <p class="faq-item__answer">Да, в наушниках установлено два высокочувствительных направленных микрофона с технологией ENC (Environmental Noise Cancellation — подавление окружающего шума). Эта система анализирует звуковые волны вокруг вас и создает противоположные звуковые волны, чтобы нейтрализовать фоновый шум (шум улицы, метро, офиса или кафе). Благодаря этому собеседники на другом конце провода слышат только ваш голос, без лишних помех. Технология особенно эффективна при разговорах на улице или в оживленных местах, делая ваши звонки максимально комфортными и разборчивыми.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Можно ли подключить наушники к двум устройствам одновременно (Multipoint)?</summary>
+                <p class="faq-item__answer">Да, модель поддерживает современную технологию Multipoint, которая позволяет одновременно держать активное подключение к двум устройствам (например, к рабочему ноутбуку и личному смартфону). Сценарий использования очень удобен: вы слушаете музыку или работаете на компьютере, и в этот момент на смартфон поступает входящий звонок. Наушники автоматически переключатся на смартфон, чтобы вы могли ответить. Как только звонок завершится, звук плавно вернется к ноутбуку, и вам не придется вручную переподключать Bluetooth. Это идеальное решение для тех, кто совмещает работу и личные дела.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Что именно входит в комплект поставки и есть ли чехол?</summary>
+                <p class="faq-item__answer">В фирменную коробку входит всё необходимое для полноценного использования: сами наушники ShopProject H1, жесткий чехол-футляр для безопасного хранения и переноски (он защищает от пыли и случайных ударов в сумке), кабель USB Type-C для зарядки, а также аудиокабель 3.5 мм (AUX). Наличие аудиокабеля — важное преимущество: если аккумулятор разрядится в дороге, или если вы захотите подключить наушники к проводному источнику (например, к старому плееру, компьютеру или бортовой системе самолета), вы всегда сможете это сделать без задержек звука.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Сколько времени занимает полная зарядка и что такое быстрая зарядка?</summary>
+                <p class="faq-item__answer">Полная зарядка аккумулятора от нуля до 100% занимает около 2 часов при использовании стандартного блока питания. Однако, благодаря функции быстрой зарядки (Fast Charge), всего 10 минут подключения к сети дают вам около 5 часов автономной работы. Это спасает в ситуациях, когда вы опаздываете на встречу или собираетесь в дорогу, а наушники разрядились. В режиме ожидания наушники также потребляют минимум энергии, поэтому они не разрядятся за ночь, если вы забудете их выключить.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Есть ли гарантия на товар и как ее получить?</summary>
+                <p class="faq-item__answer">Да, на все наушники ShopProject предоставляется официальная гарантия сроком 12 месяцев с момента покупки. Для получения гарантийного обслуживания вам необходимо сохранить чек или электронный билет, а также заводскую упаковку и полный комплект поставки. Гарантия распространяется на любые технические неисправности, не связанные с механическими повреждениями (например, если перестал работать Bluetooth-модуль, сломался разъем зарядки или пропал звук в одном из динамиков). В случае поломки мы бесплатно отремонтируем устройство или заменим его на новое.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Можно ли вернуть товар, если он не подошел по каким-то причинам?</summary>
+                <p class="faq-item__answer">Согласно Закону о защите прав потребителей, вы можете вернуть или обменять товар надлежащего качества (то есть исправный) в течение 14 дней с момента покупки. Главные условия: сохранение товарного вида (отсутствие царапин, потертостей и следов эксплуатации), наличие полного комплекта поставки и оригинальной упаковки. Процедура возврата проста: свяжитесь с нашей службой поддержки, заполните заявление, и мы вернем деньги на ту же банковскую карту, с которой производилась оплата, в течение 3-5 рабочих дней. Обратная доставка при возврате качественного товара осуществляется за счет покупателя.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-item__question">Как ухаживать за наушниками, чтобы они прослужили долго?</summary>
+                <p class="faq-item__answer">Для долгой службы наушников рекомендуется соблюдать несколько простых правил. Во-первых, протирайте амбушюры и корпус сухой мягкой тканью (не используйте спиртовые растворы, они могут повредить покрытие). Во-вторых, избегайте попадания влаги и пыли в разъемы, всегда закрывайте порт зарядки, когда он не используется. В-третьих, не оставляйте наушники под прямыми солнечными лучами и не храните их при экстремальных температурах. При правильном уходе аккумулятор сохранит свою емкость на долгие годы, а оголовье и амбушюры не потеряют свою форму.</p>
+            </details>
+
+        </div>
+    </section>
+
 </main>
 
 <footer class="site-footer" id="contacts">
@@ -112,6 +221,6 @@
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
 </footer>
 
-<a class="scroll-top" href="#top" title="Наверх">Наверх</a>
+<a href="#top" class="scroll-to-top" aria-label="Наверх">↑</a>
 </body>
 </html>
